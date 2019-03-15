@@ -10,17 +10,11 @@ public class Timer : MonoBehaviour {
     public bool started = false;
     public bool finished = false;
     public float t;
-
-
-    void Start () {
-        startTime = Time.time;
-	}
-	
+    
 	// Update is called once per frame
-	void Update () {        
-        if (started) {            
-            t = Time.time - startTime;
-            Debug.Log(startTime);
+	void Update () {
+        if (started) {
+            t += Time.deltaTime;
         }
         if (finished) {
             return;
